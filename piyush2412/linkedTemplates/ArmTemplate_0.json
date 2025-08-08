@@ -413,7 +413,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "employee.xlsx",
+						"fileName": "employee.csv",
 						"container": "emp"
 					},
 					"columnDelimiter": ",",
