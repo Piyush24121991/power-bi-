@@ -1,0 +1,9 @@
+{
+	"name": "piyush2412",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b7617d85-ff9e-4a97-ada5-8df6cbb8b10b",
+		"tenantId": "9d53ba72-7ab1-4ebd-96ee-fbfac5d4c4c6"
+	}
+}
