@@ -21,6 +21,10 @@
 			],
 			"sinks": [
 				{
+					"dataset": {
+						"referenceName": "DelimitedText14",
+						"type": "DatasetReference"
+					},
 					"name": "sink1"
 				}
 			],
@@ -58,6 +62,13 @@
 				"     broadcast: 'auto')~> join1",
 				"join1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     input(",
+				"          employee_id as string,",
+				"          employee_name as string,",
+				"          department_id as string,",
+				"          position as string,",
+				"          salary as string",
+				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
