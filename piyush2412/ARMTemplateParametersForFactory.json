@@ -31,6 +31,9 @@
 		},
 		"trigger1_properties_typeProperties_scope": {
 			"value": "/subscriptions/916bdd67-bfe5-404f-9d66-5654851c89cd/resourceGroups/piyushdata/providers/Microsoft.Storage/storageAccounts/piyushdata"
+		},
+		"trigger2_properties_typeProperties_scope": {
+			"value": "/subscriptions/916bdd67-bfe5-404f-9d66-5654851c89cd/resourceGroups/piyushdata/providers/Microsoft.Storage/storageAccounts/piyushdata"
 		}
 	}
 }
