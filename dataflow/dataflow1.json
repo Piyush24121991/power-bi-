@@ -34,7 +34,7 @@
 				"     isolationLevel: 'READ_UNCOMMITTED',",
 				"     format: 'table') ~> source1",
 				"source1 filter(salary > 25000) ~> filter1",
-				"filter1 sort(desc(salary, true)) ~> sort1"
+				"filter1 sort(asc(salary, true)) ~> sort1"
 			]
 		}
 	}
