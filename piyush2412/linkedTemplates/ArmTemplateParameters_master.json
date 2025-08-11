@@ -17,6 +17,9 @@
 		"AzureSqlDatabase1_password": {
 			"value": ""
 		},
+		"AzureBlobStorage3_connectionString": {
+			"value": ""
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://piyushdata.dfs.core.windows.net/"
 		},
@@ -28,12 +31,6 @@
 		},
 		"AzureSqlDatabase1_properties_typeProperties_userName": {
 			"value": "piyush"
-		},
-		"trigger1_properties_typeProperties_scope": {
-			"value": "/subscriptions/916bdd67-bfe5-404f-9d66-5654851c89cd/resourceGroups/piyushdata/providers/Microsoft.Storage/storageAccounts/piyushdata"
-		},
-		"trigger2_properties_typeProperties_scope": {
-			"value": "/subscriptions/916bdd67-bfe5-404f-9d66-5654851c89cd/resourceGroups/piyushdata/providers/Microsoft.Storage/storageAccounts/piyushdata"
 		},
 		"containerUri": {
 			"value": ""
