@@ -23,6 +23,9 @@
 		"AzureSqlDatabase1_password": {
 			"value": ""
 		},
+		"AzureSqlDatabase2_password": {
+			"value": ""
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://piyushdata.dfs.core.windows.net/"
 		},
@@ -34,6 +37,15 @@
 		},
 		"AzureSqlDatabase1_properties_typeProperties_userName": {
 			"value": "piyush"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_server": {
+			"value": "piyushsql.database.windows.net"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_database": {
+			"value": "piyush2412"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_userName": {
+			"value": "Piyush"
 		},
 		"containerUri": {
 			"value": ""
