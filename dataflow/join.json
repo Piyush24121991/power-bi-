@@ -1,5 +1,5 @@
 {
-	"name": "dataflow3",
+	"name": "join",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
@@ -12,6 +12,10 @@
 					"name": "source1"
 				},
 				{
+					"dataset": {
+						"referenceName": "DelimitedText16",
+						"type": "DatasetReference"
+					},
 					"name": "source2"
 				}
 			],
@@ -26,8 +30,17 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> source2"
+				"source(output(",
+				"          {Patient ID} as string,",
+				"          {Patient Name} as string,",
+				"          Gender as string,",
+				"          Age as string,",
+				"          {City ID} as string,",
+				"          Race as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source2"
 			]
 		}
 	}
