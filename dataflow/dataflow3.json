@@ -1,0 +1,43 @@
+{
+	"name": "dataflow3",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedText20",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "derivedColumn1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          Item_Identifier as string,",
+				"          Item_Weight as string,",
+				"          Item_Fat_Content as string,",
+				"          Item_Visibility as string,",
+				"          Item_Type as string,",
+				"          Item_MRP as string,",
+				"          Outlet_Identifier as string,",
+				"          Outlet_Establishment_Year as string,",
+				"          Outlet_Size as string,",
+				"          Outlet_Location_Type as string,",
+				"          Outlet_Type as string,",
+				"          Item_Outlet_Sales as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source1 derive() ~> derivedColumn1"
+			]
+		}
+	}
+}
