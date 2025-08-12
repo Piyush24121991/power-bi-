@@ -1,0 +1,46 @@
+{
+	"name": "groupby",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedText20",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "aggregate1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          Item_Identifier as string,",
+				"          Item_Weight as float,",
+				"          Item_Fat_Content as string,",
+				"          Item_Visibility as string,",
+				"          Item_Type as string,",
+				"          Item_MRP as float,",
+				"          Outlet_Identifier as string,",
+				"          Outlet_Establishment_Year as string,",
+				"          Outlet_Size as string,",
+				"          Outlet_Location_Type as string,",
+				"          Outlet_Type as string,",
+				"          Item_Outlet_Sales as float",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source1 aggregate(groupBy(Item_Fat_Content),",
+				"     Item_Weight = sum(Item_Weight),",
+				"          Item_MRP = sum(Item_MRP),",
+				"          Item_Outlet_Sales = sum(Item_Outlet_Sales)) ~> aggregate1"
+			]
+		}
+	}
+}
