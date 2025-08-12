@@ -40,7 +40,7 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
 				"source1 derive(Item_Fat_Content = iif(Item_Fat_Content == 'LF','Low Fat', Item_Fat_Content)) ~> derivedColumn1",
-				"derivedColumn1 derive(Outlet_Size = ERROR_FUNCTION('')) ~> derivedColumn2"
+				"derivedColumn1 derive(Outlet_Size = iif(isNull(Outlet_Size),'DKS',Outlet_Size)) ~> derivedColumn2"
 			]
 		}
 	}
