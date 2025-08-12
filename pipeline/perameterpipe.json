@@ -55,13 +55,22 @@
 				"outputs": [
 					{
 						"referenceName": "DelimitedText22",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"container": {
+								"value": "@pipeline().parameters.container",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
 		],
 		"parameters": {
 			"table_name": {
+				"type": "string"
+			},
+			"container": {
 				"type": "string"
 			}
 		},
