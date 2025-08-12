@@ -16,6 +16,9 @@
 			"transformations": [
 				{
 					"name": "derivedColumn1"
+				},
+				{
+					"name": "aggregate1"
 				}
 			],
 			"scriptLines": [
@@ -36,7 +39,9 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 derive(Item_Weight = ERROR_FUNCTION('')) ~> derivedColumn1"
+				"source1 derive(Item_Weight = iif(isNull(Item_Weight),avg(Item_Weight),Item_Weight)) ~> derivedColumn1",
+				"derivedColumn1 aggregate(groupBy(Item_Weight),",
+				"     Item_Weight = ERROR_FUNCTION('')) ~> aggregate1"
 			]
 		}
 	}
