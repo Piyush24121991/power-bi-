@@ -5,6 +5,10 @@
 		"typeProperties": {
 			"sources": [
 				{
+					"dataset": {
+						"referenceName": "AzureSqlTable1",
+						"type": "DatasetReference"
+					},
 					"name": "source1"
 				}
 			],
@@ -26,15 +30,10 @@
 				}
 			],
 			"scriptLines": [
-				"source(output(",
-				"          employee_id as integer,",
-				"          employee_name as string,",
-				"          department_id as integer,",
-				"          position as string,",
-				"          salary as decimal(10,2)",
-				"     ),",
-				"     allowSchemaDrift: true,",
-				"     validateSchema: false) ~> source1",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> source1",
 				"source1 filter(salary > 25000) ~> filter1",
 				"filter1 sort(asc(salary, true)) ~> sort1",
 				"sort1 sink(allowSchemaDrift: true,",
