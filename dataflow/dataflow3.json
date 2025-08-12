@@ -23,6 +23,9 @@
 			"transformations": [
 				{
 					"name": "aggregate1"
+				},
+				{
+					"name": "join1"
 				}
 			],
 			"scriptLines": [
@@ -60,7 +63,12 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source2",
-				"source1 aggregate(Item_Weight = avg(Item_Weight)) ~> aggregate1"
+				"source1 aggregate(Item_Weight = avg(Item_Weight)) ~> aggregate1",
+				"aggregate1, source1 join(ERROR_FUNCTION(''),",
+				"     joinType:'cross',",
+				"     matchType:'exact',",
+				"     ignoreSpaces: false,",
+				"     broadcast: 'auto')~> join1"
 			]
 		}
 	}
