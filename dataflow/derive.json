@@ -16,6 +16,9 @@
 			"transformations": [
 				{
 					"name": "derivedColumn1"
+				},
+				{
+					"name": "derivedColumn2"
 				}
 			],
 			"scriptLines": [
@@ -36,7 +39,8 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 derive(Item_Fat_Content = iif(Item_Fat_Content == 'LF','Low Fat', Item_Fat_Content)) ~> derivedColumn1"
+				"source1 derive(Item_Fat_Content = iif(Item_Fat_Content == 'LF','Low Fat', Item_Fat_Content)) ~> derivedColumn1",
+				"derivedColumn1 derive(Outlet_Size = ERROR_FUNCTION('')) ~> derivedColumn2"
 			]
 		}
 	}
