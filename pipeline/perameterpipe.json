@@ -44,7 +44,17 @@
 				"inputs": [
 					{
 						"referenceName": "AzureSqlTable1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"dba": {
+								"value": "@pipeline().parameters.dba",
+								"type": "Expression"
+							},
+							"table_name": {
+								"value": "@pipeline().parameters.table",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
@@ -66,6 +76,9 @@
 				"type": "string"
 			},
 			"table": {
+				"type": "string"
+			},
+			"dba": {
 				"type": "string"
 			}
 		},
