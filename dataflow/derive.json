@@ -15,7 +15,7 @@
 			"sinks": [],
 			"transformations": [
 				{
-					"name": "aggregate1"
+					"name": "derivedColumn1"
 				}
 			],
 			"scriptLines": [
@@ -36,7 +36,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 aggregate(Item_Weight = avg(Item_Weight)) ~> aggregate1"
+				"source1 derive(Item_Fat_Content = ERROR_FUNCTION('')) ~> derivedColumn1"
 			]
 		}
 	}
