@@ -62,7 +62,8 @@
 				"     ignoreNoFilesFound: false) ~> source2",
 				"source1 aggregate(groupBy(Item_Fat_Content),",
 				"     Item_Weight = sum(Item_Weight),",
-				"          Item_MRP = ERROR_FUNCTION('')) ~> aggregate1"
+				"          Item_MRP = sum(Item_MRP),",
+				"          Item_Outlet_Sales = sum(Item_Outlet_Sales)) ~> aggregate1"
 			]
 		}
 	}
