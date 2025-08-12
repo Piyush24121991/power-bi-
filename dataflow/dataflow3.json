@@ -61,7 +61,7 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source2",
 				"source1 aggregate(groupBy(Item_Fat_Content),",
-				"     Item_Weight = avg(Item_Weight)) ~> aggregate1"
+				"     Item_Weight = sum(Item_Weight)) ~> aggregate1"
 			]
 		}
 	}
