@@ -10,13 +10,6 @@
 						"type": "DatasetReference"
 					},
 					"name": "source1"
-				},
-				{
-					"dataset": {
-						"referenceName": "DelimitedText21",
-						"type": "DatasetReference"
-					},
-					"name": "source2"
 				}
 			],
 			"sinks": [],
@@ -43,23 +36,6 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source(output(",
-				"          Item_Identifier as string,",
-				"          Item_Weight as string,",
-				"          Item_Fat_Content as string,",
-				"          Item_Visibility as string,",
-				"          Item_Type as string,",
-				"          Item_MRP as string,",
-				"          Outlet_Identifier as string,",
-				"          Outlet_Establishment_Year as string,",
-				"          Outlet_Size as string,",
-				"          Outlet_Location_Type as string,",
-				"          Outlet_Type as string,",
-				"          Item_Outlet_Sales as string",
-				"     ),",
-				"     allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source2",
 				"source1 aggregate(groupBy(Item_Fat_Content),",
 				"     Item_Weight = sum(Item_Weight),",
 				"          Item_MRP = sum(Item_MRP),",
