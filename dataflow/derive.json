@@ -14,6 +14,10 @@
 			],
 			"sinks": [
 				{
+					"dataset": {
+						"referenceName": "DelimitedText19",
+						"type": "DatasetReference"
+					},
 					"name": "sink1"
 				}
 			],
@@ -47,6 +51,16 @@
 				"derivedColumn1 derive(Outlet_Size = iif(isNull(Outlet_Size),'DKS',Outlet_Size)) ~> derivedColumn2",
 				"derivedColumn2 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     input(",
+				"          {City ID} as string,",
+				"          City as string,",
+				"          State as string,",
+				"          {Patient ID} as string,",
+				"          {Patient Name} as string,",
+				"          Gender as string,",
+				"          Age as string,",
+				"          Race as string",
+				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     partitionBy('hash', 1)) ~> sink1"
