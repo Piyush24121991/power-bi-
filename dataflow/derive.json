@@ -36,7 +36,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 aggregate(Item_Weight = ERROR_FUNCTION('')) ~> aggregate1"
+				"source1 aggregate(Item_Weight = avg(Item_Weight)) ~> aggregate1"
 			]
 		}
 	}
