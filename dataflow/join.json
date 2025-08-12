@@ -53,7 +53,8 @@
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
 				"     broadcast: 'auto')~> join1",
-				"join1 filter(Gender == 'Male') ~> filter1"
+				"join1 filter(Gender == 'Male',",
+				"     partitionBy('hash', 1)) ~> filter1"
 			]
 		}
 	}
