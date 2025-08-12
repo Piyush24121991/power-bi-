@@ -21,6 +21,10 @@
 			],
 			"sinks": [
 				{
+					"dataset": {
+						"referenceName": "DelimitedText17",
+						"type": "DatasetReference"
+					},
 					"name": "sink1"
 				}
 			],
@@ -65,6 +69,13 @@
 				"filter1 sort(asc(Age, true)) ~> sort1",
 				"sort1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     input(",
+				"          employee_id as string,",
+				"          employee_name as string,",
+				"          department_id as string,",
+				"          position as string,",
+				"          salary as string",
+				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     saveOrder: 1,",
