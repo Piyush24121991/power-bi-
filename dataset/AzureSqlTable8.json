@@ -6,7 +6,10 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"dba": {
+			"dba_name": {
+				"type": "string"
+			},
+			"table": {
 				"type": "string"
 			}
 		},
