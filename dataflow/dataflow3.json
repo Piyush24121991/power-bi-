@@ -15,28 +15,28 @@
 			"sinks": [],
 			"transformations": [
 				{
-					"name": "derivedColumn1"
+					"name": "aggregate1"
 				}
 			],
 			"scriptLines": [
 				"source(output(",
 				"          Item_Identifier as string,",
-				"          Item_Weight as integer,",
+				"          Item_Weight as float,",
 				"          Item_Fat_Content as string,",
 				"          Item_Visibility as string,",
 				"          Item_Type as string,",
-				"          Item_MRP as double,",
+				"          Item_MRP as float,",
 				"          Outlet_Identifier as string,",
 				"          Outlet_Establishment_Year as string,",
 				"          Outlet_Size as string,",
 				"          Outlet_Location_Type as string,",
 				"          Outlet_Type as string,",
-				"          Item_Outlet_Sales as integer",
+				"          Item_Outlet_Sales as float",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 derive() ~> derivedColumn1"
+				"source1 aggregate() ~> aggregate1"
 			]
 		}
 	}
