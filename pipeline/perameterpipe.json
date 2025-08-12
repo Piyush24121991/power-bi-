@@ -1,5 +1,5 @@
 {
-	"name": "copy",
+	"name": "perameterpipe",
 	"properties": {
 		"activities": [
 			{
@@ -49,12 +49,26 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DelimitedText3",
-						"type": "DatasetReference"
+						"referenceName": "DelimitedText22",
+						"type": "DatasetReference",
+						"parameters": {
+							"contener": {
+								"value": "@pipeline().parameters.container",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
 		],
+		"parameters": {
+			"container": {
+				"type": "string"
+			},
+			"table": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
