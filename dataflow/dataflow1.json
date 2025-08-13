@@ -18,12 +18,13 @@
 				"parameters{",
 				"     dba as string,",
 				"     table as string,",
-				"     parameter1 as string",
+				"     container as string",
 				"}",
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
-				"     format: 'table') ~> source1"
+				"     format: 'table',",
+				"     partitionBy('hash', 1)) ~> source1"
 			]
 		}
 	}
