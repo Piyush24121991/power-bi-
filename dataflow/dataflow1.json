@@ -22,7 +22,7 @@
 				"source(output(",
 				"          id as string,",
 				"          product as string,",
-				"          {sales } as string",
+				"          {sales } as integer",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
@@ -30,7 +30,7 @@
 				"     partitionBy('hash', 1)) ~> source1",
 				"source1 pivot(groupBy(id),",
 				"     pivotBy(product),",
-				"     sales = sum(sales),",
+				"     sales = sum({sales }),",
 				"     columnNaming: '$N$V',",
 				"     lateral: true) ~> pivot1"
 			]
