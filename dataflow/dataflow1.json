@@ -30,6 +30,7 @@
 				"     partitionBy('hash', 1)) ~> source1",
 				"source1 pivot(groupBy(id),",
 				"     pivotBy(product),",
+				"     sales = sum(sales),",
 				"     columnNaming: '$N$V',",
 				"     lateral: true) ~> pivot1"
 			]
