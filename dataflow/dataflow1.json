@@ -29,6 +29,7 @@
 				"     ignoreNoFilesFound: false,",
 				"     partitionBy('hash', 1)) ~> source1",
 				"source1 pivot(groupBy(id),",
+				"     pivotBy(product),",
 				"     columnNaming: '$N$V',",
 				"     lateral: true) ~> pivot1"
 			]
